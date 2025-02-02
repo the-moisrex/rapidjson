@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5...3.31.5)
 
 SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules)
 
@@ -163,7 +163,7 @@ endif()
 
 add_custom_target(travis_doc)
 add_custom_command(TARGET travis_doc
-    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/travis-doxygen.sh)
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/travis-doxygen.sh POST_BUILD)
 
 if(RAPIDJSON_BUILD_EXAMPLES)
     add_subdirectory(example)
